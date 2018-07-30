@@ -155,6 +155,7 @@ namespace DecodeLog
     {
         public static string DecodeXmlLog(this string log)
         {
+            log = new Regex("\\[\\d\\d.*\\\"Body\\\":\"").Replace(log, "");
             return new Regex("\\[\\d\\d.*\\\"message\\\":\"").Replace(log, "");
 
         }

@@ -41,12 +41,12 @@
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.textBox1.Size = new System.Drawing.Size(1032, 483);
+            this.textBox1.Size = new System.Drawing.Size(1107, 483);
             this.textBox1.TabIndex = 0;
             // 
             // btnDecodeLog
             // 
-            this.btnDecodeLog.Location = new System.Drawing.Point(711, 501);
+            this.btnDecodeLog.Location = new System.Drawing.Point(819, 501);
             this.btnDecodeLog.Name = "btnDecodeLog";
             this.btnDecodeLog.Size = new System.Drawing.Size(93, 23);
             this.btnDecodeLog.TabIndex = 1;
@@ -56,7 +56,7 @@
             // 
             // btnFormatXML
             // 
-            this.btnFormatXML.Location = new System.Drawing.Point(831, 501);
+            this.btnFormatXML.Location = new System.Drawing.Point(918, 501);
             this.btnFormatXML.Name = "btnFormatXML";
             this.btnFormatXML.Size = new System.Drawing.Size(87, 23);
             this.btnFormatXML.TabIndex = 2;
@@ -66,7 +66,7 @@
             // 
             // btnFormatJson
             // 
-            this.btnFormatJson.Location = new System.Drawing.Point(936, 501);
+            this.btnFormatJson.Location = new System.Drawing.Point(1011, 501);
             this.btnFormatJson.Name = "btnFormatJson";
             this.btnFormatJson.Size = new System.Drawing.Size(108, 23);
             this.btnFormatJson.TabIndex = 3;
@@ -86,7 +86,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1075, 595);
+            this.ClientSize = new System.Drawing.Size(1131, 595);
             this.Controls.Add(this.message);
             this.Controls.Add(this.btnFormatJson);
             this.Controls.Add(this.btnFormatXML);
