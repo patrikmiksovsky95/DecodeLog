@@ -28,20 +28,28 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.btnDecodeLog = new System.Windows.Forms.Button();
             this.btnFormatXML = new System.Windows.Forms.Button();
             this.btnFormatJson = new System.Windows.Forms.Button();
             this.message = new System.Windows.Forms.Label();
+            this.txtBoxLog = new System.Windows.Forms.TextBox();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.label1 = new System.Windows.Forms.Label();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtBoxApiUrl = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(12, 12);
+            this.textBox1.Location = new System.Drawing.Point(12, 91);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.textBox1.Size = new System.Drawing.Size(1107, 483);
+            this.textBox1.Size = new System.Drawing.Size(1107, 404);
             this.textBox1.TabIndex = 0;
             // 
             // btnDecodeLog
@@ -82,11 +90,70 @@
             this.message.Size = new System.Drawing.Size(0, 13);
             this.message.TabIndex = 4;
             // 
+            // txtBoxLog
+            // 
+            this.txtBoxLog.Location = new System.Drawing.Point(12, 24);
+            this.txtBoxLog.Name = "txtBoxLog";
+            this.txtBoxLog.Size = new System.Drawing.Size(1104, 20);
+            this.txtBoxLog.TabIndex = 5;
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(12, 8);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(25, 13);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "Log";
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(12, 65);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(122, 20);
+            this.textBox3.TabIndex = 8;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(12, 51);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(44, 13);
+            this.label2.TabIndex = 9;
+            this.label2.Text = "Root url";
+            // 
+            // txtBoxApiUrl
+            // 
+            this.txtBoxApiUrl.Location = new System.Drawing.Point(174, 67);
+            this.txtBoxApiUrl.Name = "txtBoxApiUrl";
+            this.txtBoxApiUrl.Size = new System.Drawing.Size(426, 20);
+            this.txtBoxApiUrl.TabIndex = 10;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(171, 51);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(38, 13);
+            this.label3.TabIndex = 11;
+            this.label3.Text = "API url";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1131, 595);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.txtBoxApiUrl);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.txtBoxLog);
             this.Controls.Add(this.message);
             this.Controls.Add(this.btnFormatJson);
             this.Controls.Add(this.btnFormatXML);
@@ -106,6 +173,13 @@
         private System.Windows.Forms.Button btnFormatXML;
         private System.Windows.Forms.Button btnFormatJson;
         private System.Windows.Forms.Label message;
+        private System.Windows.Forms.TextBox txtBoxLog;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txtBoxApiUrl;
+        private System.Windows.Forms.Label label3;
     }
 }
 

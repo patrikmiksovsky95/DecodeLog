@@ -32,7 +32,9 @@ namespace DecodeLog
         {
             ResetMessage();
 
-            var log = textBox1.Text;
+            var log = txtBoxLog.Text;
+            var apiUrl = log.GetApiUrl();
+            txtBoxApiUrl.Text = apiUrl;
             textBox1.Text = log.DecodeXmlLog().DecodeJsonLog().NormalizeLog();
         }
 
@@ -153,6 +155,10 @@ namespace DecodeLog
 
     public static class logExtensions
     {
+        public static string GetApiUrl(this string log)
+        {
+             return new Regex("\"Identifier\":\".*\",\"StartUtc\"").Match(log).Value.Replace("\"Identifier\":\"", "").Replace("\",\"StartUtc\"", "");
+        }
         public static string DecodeXmlLog(this string log)
         {
             log = new Regex("\\[\\d\\d.*\\\"Body\\\":\"").Replace(log, "");
