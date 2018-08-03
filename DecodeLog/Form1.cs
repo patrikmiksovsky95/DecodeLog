@@ -13,6 +13,8 @@ using System.Xml;
 using System.Xml.Serialization;
 using System.Runtime.Serialization.Formatters.Soap;
 using Newtonsoft.Json;
+using System.Net.Http;
+using System.Net;
 
 namespace DecodeLog
 {
@@ -150,6 +152,44 @@ namespace DecodeLog
                 }
             }
             return sb.ToString();
+        }
+
+        private void btnDevelop_Click(object sender, EventArgs e)
+        {
+            txtRootUrl.Text = "https://develop.mews.li";
+        }
+
+        private void btnDemo_Click(object sender, EventArgs e)
+        {
+            txtRootUrl.Text = "https://demo.mews.li";
+        }
+
+        private void btnLocal_Click(object sender, EventArgs e)
+        {
+            txtRootUrl.Text = "http://localhost:61785";
+            
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            var request = (HttpWebRequest)WebRequest.Create($"{txtRootUrl.Text}{txtBoxApiUrl.Text}");
+
+            var postData = textBox1.Text;
+            var data = Encoding.ASCII.GetBytes(postData);
+
+            request.Method = "POST";
+            var type = selectFormat.Text == "json" ? "json" : "x-www-form-urlencoded";
+            request.ContentType = $"application/{type}";
+            request.ContentLength = data.Length;
+
+            using (var stream = request.GetRequestStream())
+            {
+                stream.Write(data, 0, data.Length);
+            }
+
+            var response = (HttpWebResponse)request.GetResponse();
+
+            var responseString = new StreamReader(response.GetResponseStream()).ReadToEnd();
         }
     }
 
