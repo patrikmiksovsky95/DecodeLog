@@ -44,40 +44,7 @@ namespace DecodeLog
         private void btnFormatXML_Click(object sender, EventArgs e)
         {
             ResetMessage();
-
-            string result = "";
-
-            var mStream = new MemoryStream();
-            var writer = new XmlTextWriter(mStream, Encoding.Unicode);
-            var document = new XmlDocument();
-
-            try
-            {
-                document.LoadXml(textBox1.Text);
-
-                writer.Formatting = System.Xml.Formatting.Indented;
-
-                document.WriteContentTo(writer);
-                writer.Flush();
-                mStream.Flush();
-
-                mStream.Position = 0;
-
-                StreamReader sReader = new StreamReader(mStream);
-
-                string formattedXml = sReader.ReadToEnd();
-
-                result = formattedXml;
-            }
-            catch (XmlException ex)
-            {
-                textBox1.Text = $"Invalid XML object. {ex}";
-            }
-
-            mStream.Close();
-            writer.Close();
-
-            textBox1.Text = result;
+            textBox1.Text = FormatXml(textBox1.Text);
         }
 
 
@@ -93,6 +60,43 @@ namespace DecodeLog
             {
                 message.Text = $"Invalid JSON object. {ex}";
             }
+        }
+
+        private string FormatXml(string xml)
+        {
+            var mStream = new MemoryStream();
+            var writer = new XmlTextWriter(mStream, Encoding.Unicode);
+            var document = new XmlDocument();
+
+            var formated = "";
+            try
+            {
+                document.LoadXml(xml);
+
+                writer.Formatting = System.Xml.Formatting.Indented;
+
+                document.WriteContentTo(writer);
+                writer.Flush();
+                mStream.Flush();
+
+                mStream.Position = 0;
+
+                StreamReader sReader = new StreamReader(mStream);
+
+                string formattedXml = sReader.ReadToEnd();
+
+                return formated = formattedXml;
+            }
+            catch (XmlException ex)
+            {
+                textBox1.Text = $"Invalid XML object. {ex}";
+                formated = xml;
+            }
+
+            mStream.Close();
+            writer.Close();
+
+            return formated;
         }
 
         private const string INDENT_STRING = "    ";
@@ -186,10 +190,39 @@ namespace DecodeLog
             {
                 stream.Write(data, 0, data.Length);
             }
+            try
+            { 
+                var response = (HttpWebResponse)request.GetResponse();
+                ProcessResponse(response, type);
+            }
+            catch(WebException ex)
+            {
+                ProcessResponse((HttpWebResponse)ex.Response, "json");
+            }
+        }
 
-            var response = (HttpWebResponse)request.GetResponse();
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            txtBoxLog.Text = "";
+        }
+
+        private void ProcessResponse(HttpWebResponse response, string format)
+        {
+            txtStatusCode.Text = response.StatusCode.ToString();
+            txtStatusMessage.Text = response.StatusDescription.ToString();
 
             var responseString = new StreamReader(response.GetResponseStream()).ReadToEnd();
+            if (!string.IsNullOrEmpty(responseString))
+            {
+                if(format == "json")
+                {
+                    txtResponseBody.Text = FormatJson(responseString);
+                }
+                else
+                {
+                    txtResponseBody.Text = FormatXml(responseString);
+                }
+            }
         }
     }
 

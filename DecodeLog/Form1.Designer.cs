@@ -46,6 +46,13 @@
             this.btnLocal = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.selectFormat = new System.Windows.Forms.ComboBox();
+            this.btnClear = new System.Windows.Forms.Button();
+            this.txtStatusCode = new System.Windows.Forms.TextBox();
+            this.txtStatusMessage = new System.Windows.Forms.TextBox();
+            this.txtResponseBody = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // textBox1
@@ -59,7 +66,7 @@
             // 
             // btnDecodeLog
             // 
-            this.btnDecodeLog.Location = new System.Drawing.Point(811, 457);
+            this.btnDecodeLog.Location = new System.Drawing.Point(923, 22);
             this.btnDecodeLog.Name = "btnDecodeLog";
             this.btnDecodeLog.Size = new System.Drawing.Size(93, 23);
             this.btnDecodeLog.TabIndex = 1;
@@ -99,7 +106,7 @@
             // 
             this.txtBoxLog.Location = new System.Drawing.Point(12, 24);
             this.txtBoxLog.Name = "txtBoxLog";
-            this.txtBoxLog.Size = new System.Drawing.Size(1104, 20);
+            this.txtBoxLog.Size = new System.Drawing.Size(904, 20);
             this.txtBoxLog.TabIndex = 5;
             // 
             // contextMenuStrip1
@@ -142,7 +149,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(393, 47);
+            this.label3.Location = new System.Drawing.Point(393, 46);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(38, 13);
             this.label3.TabIndex = 11;
@@ -181,7 +188,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(991, 56);
+            this.button1.Location = new System.Drawing.Point(962, 58);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(124, 23);
             this.button1.TabIndex = 15;
@@ -200,11 +207,80 @@
             this.selectFormat.Size = new System.Drawing.Size(121, 21);
             this.selectFormat.TabIndex = 16;
             // 
+            // btnClear
+            // 
+            this.btnClear.BackColor = System.Drawing.Color.DarkRed;
+            this.btnClear.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.btnClear.Location = new System.Drawing.Point(1039, 23);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(75, 23);
+            this.btnClear.TabIndex = 17;
+            this.btnClear.Text = "Clear";
+            this.btnClear.UseVisualStyleBackColor = false;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+            // 
+            // txtStatusCode
+            // 
+            this.txtStatusCode.Location = new System.Drawing.Point(15, 516);
+            this.txtStatusCode.Name = "txtStatusCode";
+            this.txtStatusCode.Size = new System.Drawing.Size(100, 20);
+            this.txtStatusCode.TabIndex = 18;
+            // 
+            // txtStatusMessage
+            // 
+            this.txtStatusMessage.Location = new System.Drawing.Point(121, 516);
+            this.txtStatusMessage.Name = "txtStatusMessage";
+            this.txtStatusMessage.Size = new System.Drawing.Size(592, 20);
+            this.txtStatusMessage.TabIndex = 19;
+            // 
+            // txtResponseBody
+            // 
+            this.txtResponseBody.Location = new System.Drawing.Point(15, 560);
+            this.txtResponseBody.Multiline = true;
+            this.txtResponseBody.Name = "txtResponseBody";
+            this.txtResponseBody.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.txtResponseBody.Size = new System.Drawing.Size(1104, 108);
+            this.txtResponseBody.TabIndex = 20;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(15, 497);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(64, 13);
+            this.label4.TabIndex = 21;
+            this.label4.Text = "Status code";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(121, 496);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(82, 13);
+            this.label5.TabIndex = 22;
+            this.label5.Text = "Status message";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(18, 543);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(81, 13);
+            this.label6.TabIndex = 23;
+            this.label6.Text = "Response body";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1131, 595);
+            this.ClientSize = new System.Drawing.Size(1131, 680);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.txtResponseBody);
+            this.Controls.Add(this.txtStatusMessage);
+            this.Controls.Add(this.txtStatusCode);
+            this.Controls.Add(this.btnClear);
             this.Controls.Add(this.selectFormat);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnLocal);
@@ -247,6 +323,13 @@
         private System.Windows.Forms.Button btnLocal;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ComboBox selectFormat;
+        private System.Windows.Forms.Button btnClear;
+        private System.Windows.Forms.TextBox txtStatusCode;
+        private System.Windows.Forms.TextBox txtStatusMessage;
+        private System.Windows.Forms.TextBox txtResponseBody;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
     }
 }
 
