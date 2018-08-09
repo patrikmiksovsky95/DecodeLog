@@ -1,20 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml;
-using System.Xml.Serialization;
-using System.Runtime.Serialization.Formatters.Soap;
-using Newtonsoft.Json;
-using System.Net.Http;
-using System.Net;
 
 namespace DecodeLog
 {
@@ -171,7 +163,7 @@ namespace DecodeLog
         private void btnLocal_Click(object sender, EventArgs e)
         {
             txtRootUrl.Text = "http://localhost:61785";
-            
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -191,11 +183,11 @@ namespace DecodeLog
                 stream.Write(data, 0, data.Length);
             }
             try
-            { 
+            {
                 var response = (HttpWebResponse)request.GetResponse();
                 ProcessResponse(response, type);
             }
-            catch(WebException ex)
+            catch (WebException ex)
             {
                 ProcessResponse((HttpWebResponse)ex.Response, "json");
             }
@@ -214,7 +206,7 @@ namespace DecodeLog
             var responseString = new StreamReader(response.GetResponseStream()).ReadToEnd();
             if (!string.IsNullOrEmpty(responseString))
             {
-                if(format == "json")
+                if (format == "json")
                 {
                     txtResponseBody.Text = FormatJson(responseString);
                 }
@@ -230,7 +222,7 @@ namespace DecodeLog
     {
         public static string GetApiUrl(this string log)
         {
-             return new Regex("\"Identifier\":\".*\",\"StartUtc\"").Match(log).Value.Replace("\"Identifier\":\"", "").Replace("\",\"StartUtc\"", "");
+            return new Regex("\"Identifier\":\".*\",\"StartUtc\"").Match(log).Value.Replace("\"Identifier\":\"", "").Replace("\",\"StartUtc\"", "");
         }
         public static string DecodeXmlLog(this string log)
         {
@@ -256,4 +248,4 @@ namespace DecodeLog
             }
         }
     }
-}   
+}
