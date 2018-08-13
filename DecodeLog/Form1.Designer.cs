@@ -108,6 +108,7 @@
             this.txtBoxLog.Name = "txtBoxLog";
             this.txtBoxLog.Size = new System.Drawing.Size(904, 20);
             this.txtBoxLog.TabIndex = 5;
+            this.txtBoxLog.TextChanged += new System.EventHandler(this.txtBoxLog_TextChanged);
             // 
             // contextMenuStrip1
             // 
@@ -299,6 +300,7 @@
             this.Controls.Add(this.textBox1);
             this.Name = "Form1";
             this.Text = "Best tool for xml json ever!!";
+            this.Activated += new System.EventHandler(this.Form1_Activated);
             this.ResumeLayout(false);
             this.PerformLayout();
 

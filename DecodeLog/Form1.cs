@@ -22,6 +22,34 @@ namespace DecodeLog
             message.Text = "";
         }
 
+        private void txtBoxLog_TextChanged(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(txtBoxLog.Text))
+            {
+                var log = txtBoxLog.Text;
+                var apiUrl = log.GetApiUrl();
+                txtBoxApiUrl.Text = apiUrl;
+                textBox1.Text = log.DecodeXmlLog().DecodeJsonLog().NormalizeLog();
+
+                if (txtBoxLog.Text.Contains("<?xml"))
+                {
+                    textBox1.Text = FormatXml(textBox1.Text);
+                    selectFormat.SelectedValue = "xml";
+                }
+                else
+                {
+                    try
+                    {
+                        selectFormat.SelectedValue = "json";
+                        textBox1.Text = FormatJson(textBox1.Text);
+                    }
+                    catch (Exception ex)
+                    {
+                    }
+                }
+            }
+        }
+
         private void decodeLog_Click(object sender, EventArgs e)
         {
             ResetMessage();
@@ -215,6 +243,11 @@ namespace DecodeLog
                     txtResponseBody.Text = FormatXml(responseString);
                 }
             }
+        }
+
+        private void Form1_Activated(object sender, EventArgs e)
+        {
+            txtBoxLog.Focus();
         }
     }
 
