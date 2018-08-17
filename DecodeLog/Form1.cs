@@ -34,13 +34,13 @@ namespace DecodeLog
                 if (txtBoxLog.Text.Contains("<?xml"))
                 {
                     textBox1.Text = FormatXml(textBox1.Text);
-                    selectFormat.SelectedValue = "xml";
+                    selectFormat.SelectedItem = selectFormat.Items[1];
                 }
                 else
                 {
                     try
                     {
-                        selectFormat.SelectedValue = "json";
+                        selectFormat.SelectedItem = selectFormat.Items[0];
                         textBox1.Text = FormatJson(textBox1.Text);
                     }
                     catch (Exception ex)
@@ -224,6 +224,11 @@ namespace DecodeLog
         private void btnClear_Click(object sender, EventArgs e)
         {
             txtBoxLog.Text = "";
+            txtStatusCode.Text = "";
+            txtStatusMessage.Text = "";
+            txtRootUrl.Text = "";
+            txtBoxApiUrl.Text = "";
+
         }
 
         private void ProcessResponse(HttpWebResponse response, string format)

@@ -57,7 +57,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(12, 91);
+            this.textBox1.Location = new System.Drawing.Point(12, 145);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Both;
@@ -68,7 +68,7 @@
             // 
             this.btnDecodeLog.Location = new System.Drawing.Point(923, 22);
             this.btnDecodeLog.Name = "btnDecodeLog";
-            this.btnDecodeLog.Size = new System.Drawing.Size(93, 23);
+            this.btnDecodeLog.Size = new System.Drawing.Size(93, 43);
             this.btnDecodeLog.TabIndex = 1;
             this.btnDecodeLog.Text = "Decode log";
             this.btnDecodeLog.UseVisualStyleBackColor = true;
@@ -76,7 +76,7 @@
             // 
             // btnFormatXML
             // 
-            this.btnFormatXML.Location = new System.Drawing.Point(910, 457);
+            this.btnFormatXML.Location = new System.Drawing.Point(910, 516);
             this.btnFormatXML.Name = "btnFormatXML";
             this.btnFormatXML.Size = new System.Drawing.Size(87, 23);
             this.btnFormatXML.TabIndex = 2;
@@ -86,7 +86,7 @@
             // 
             // btnFormatJson
             // 
-            this.btnFormatJson.Location = new System.Drawing.Point(1003, 457);
+            this.btnFormatJson.Location = new System.Drawing.Point(1003, 516);
             this.btnFormatJson.Name = "btnFormatJson";
             this.btnFormatJson.Size = new System.Drawing.Size(108, 23);
             this.btnFormatJson.TabIndex = 3;
@@ -105,8 +105,9 @@
             // txtBoxLog
             // 
             this.txtBoxLog.Location = new System.Drawing.Point(12, 24);
+            this.txtBoxLog.Multiline = true;
             this.txtBoxLog.Name = "txtBoxLog";
-            this.txtBoxLog.Size = new System.Drawing.Size(904, 20);
+            this.txtBoxLog.Size = new System.Drawing.Size(904, 41);
             this.txtBoxLog.TabIndex = 5;
             this.txtBoxLog.TextChanged += new System.EventHandler(this.txtBoxLog_TextChanged);
             // 
@@ -126,7 +127,7 @@
             // 
             // txtRootUrl
             // 
-            this.txtRootUrl.Location = new System.Drawing.Point(266, 59);
+            this.txtRootUrl.Location = new System.Drawing.Point(266, 107);
             this.txtRootUrl.Name = "txtRootUrl";
             this.txtRootUrl.Size = new System.Drawing.Size(122, 20);
             this.txtRootUrl.TabIndex = 8;
@@ -134,7 +135,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(265, 46);
+            this.label2.Location = new System.Drawing.Point(268, 92);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(44, 13);
             this.label2.TabIndex = 9;
@@ -142,7 +143,7 @@
             // 
             // txtBoxApiUrl
             // 
-            this.txtBoxApiUrl.Location = new System.Drawing.Point(395, 59);
+            this.txtBoxApiUrl.Location = new System.Drawing.Point(395, 107);
             this.txtBoxApiUrl.Name = "txtBoxApiUrl";
             this.txtBoxApiUrl.Size = new System.Drawing.Size(426, 20);
             this.txtBoxApiUrl.TabIndex = 10;
@@ -150,7 +151,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(393, 46);
+            this.label3.Location = new System.Drawing.Point(398, 92);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(38, 13);
             this.label3.TabIndex = 11;
@@ -158,7 +159,7 @@
             // 
             // btnDevelop
             // 
-            this.btnDevelop.Location = new System.Drawing.Point(12, 59);
+            this.btnDevelop.Location = new System.Drawing.Point(12, 107);
             this.btnDevelop.Name = "btnDevelop";
             this.btnDevelop.Size = new System.Drawing.Size(75, 23);
             this.btnDevelop.TabIndex = 12;
@@ -169,7 +170,7 @@
             // 
             // btnDemo
             // 
-            this.btnDemo.Location = new System.Drawing.Point(93, 58);
+            this.btnDemo.Location = new System.Drawing.Point(93, 106);
             this.btnDemo.Name = "btnDemo";
             this.btnDemo.Size = new System.Drawing.Size(75, 23);
             this.btnDemo.TabIndex = 13;
@@ -179,7 +180,7 @@
             // 
             // btnLocal
             // 
-            this.btnLocal.Location = new System.Drawing.Point(174, 58);
+            this.btnLocal.Location = new System.Drawing.Point(174, 106);
             this.btnLocal.Name = "btnLocal";
             this.btnLocal.Size = new System.Drawing.Size(75, 23);
             this.btnLocal.TabIndex = 14;
@@ -189,9 +190,9 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(962, 58);
+            this.button1.Location = new System.Drawing.Point(962, 92);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(124, 23);
+            this.button1.Size = new System.Drawing.Size(149, 37);
             this.button1.TabIndex = 15;
             this.button1.Text = "Send request";
             this.button1.UseVisualStyleBackColor = true;
@@ -203,7 +204,7 @@
             this.selectFormat.Items.AddRange(new object[] {
             "json",
             "xml"});
-            this.selectFormat.Location = new System.Drawing.Point(835, 58);
+            this.selectFormat.Location = new System.Drawing.Point(835, 106);
             this.selectFormat.Name = "selectFormat";
             this.selectFormat.Size = new System.Drawing.Size(121, 21);
             this.selectFormat.TabIndex = 16;
@@ -212,9 +213,9 @@
             // 
             this.btnClear.BackColor = System.Drawing.Color.DarkRed;
             this.btnClear.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.btnClear.Location = new System.Drawing.Point(1039, 23);
+            this.btnClear.Location = new System.Drawing.Point(1044, 12);
             this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(75, 23);
+            this.btnClear.Size = new System.Drawing.Size(75, 42);
             this.btnClear.TabIndex = 17;
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = false;
@@ -222,21 +223,21 @@
             // 
             // txtStatusCode
             // 
-            this.txtStatusCode.Location = new System.Drawing.Point(15, 516);
+            this.txtStatusCode.Location = new System.Drawing.Point(15, 575);
             this.txtStatusCode.Name = "txtStatusCode";
             this.txtStatusCode.Size = new System.Drawing.Size(100, 20);
             this.txtStatusCode.TabIndex = 18;
             // 
             // txtStatusMessage
             // 
-            this.txtStatusMessage.Location = new System.Drawing.Point(121, 516);
+            this.txtStatusMessage.Location = new System.Drawing.Point(135, 574);
             this.txtStatusMessage.Name = "txtStatusMessage";
             this.txtStatusMessage.Size = new System.Drawing.Size(592, 20);
             this.txtStatusMessage.TabIndex = 19;
             // 
             // txtResponseBody
             // 
-            this.txtResponseBody.Location = new System.Drawing.Point(15, 560);
+            this.txtResponseBody.Location = new System.Drawing.Point(15, 619);
             this.txtResponseBody.Multiline = true;
             this.txtResponseBody.Name = "txtResponseBody";
             this.txtResponseBody.ScrollBars = System.Windows.Forms.ScrollBars.Both;
@@ -246,7 +247,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(15, 497);
+            this.label4.Location = new System.Drawing.Point(18, 559);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(64, 13);
             this.label4.TabIndex = 21;
@@ -255,7 +256,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(121, 496);
+            this.label5.Location = new System.Drawing.Point(138, 558);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(82, 13);
             this.label5.TabIndex = 22;
@@ -264,7 +265,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(18, 543);
+            this.label6.Location = new System.Drawing.Point(18, 603);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(81, 13);
             this.label6.TabIndex = 23;
@@ -274,7 +275,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1131, 680);
+            this.ClientSize = new System.Drawing.Size(1131, 749);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
